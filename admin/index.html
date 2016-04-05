@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <title>
+            No Wait Breaks Admin
+        </title>
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    </head>
+    <body>
+        <h1>
+            No Wait Breaks Interactions
+        </h1>
+        <div class="mainWrapper">
+            <div class="cf">
+                <div class="half left cf">
+                    <input type="text" id="input-header" placeholder="Header"/>
+                    <input type="text" id="input-price" placeholder="Price"/>
+                    <select id="input-tag">
+                        <option value="football">
+                            football
+                        </option>
+                        <option value="baseball">
+                            baseball
+                        </option>
+                        <option value="basketball">
+                            basketball
+                        </option>
+                        <option value="misc">
+                            misc
+                        </option>
+                    </select>
+                </div>
+                <div class="half right cf">
+                    <textarea name="info" type="text" id="input-info" placeholder="Info"></textarea>
+                    <div class="input-img-wrapper">
+                        <div class="input-img">
+                            <i class="fa fa-camera">
+                            </i>
+                        </div>
+                        <div class="input-img">
+                            <i class="fa fa-camera">
+                            </i>
+                        </div>
+                        <div class="input-img">
+                            <i class="fa fa-camera">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" id="input-submit"/>
+            </div>
+            <div class="all-items-list">
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.4.1/firebase.js">
+        </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="scripts/mock.js">
+        </script>
+        <script type="text/javascript" src="scripts/script.js">
+        </script>
+    </body>
+</html>

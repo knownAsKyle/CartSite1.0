@@ -1,0 +1,171 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather);
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #f1f1f1;
+    font-family: 'Merriweather', sans-serif;
+    padding: 1em;
+}
+
+h1 {
+    text-align: center;
+    color: #a8a8a8;
+    text-shadow: 1px 1px 0 white;
+}
+
+.cf, .all-items-list {
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.cf input, .cf textarea, .cf select {
+    border: 0;
+    outline: 0;
+    padding: 1em;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-family: 'Merriweather', sans-serif;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+.cf input:focus, .cf textarea:focus, .cf select:focus {
+    -moz-box-shadow: 0 0px 2px #e74c3c !important;
+    -webkit-box-shadow: 0 0px 2px #e74c3c !important;
+    box-shadow: 0 0px 2px #e74c3c !important;
+}
+
+.cf #input-submit {
+    color: white;
+    background: #e74c3c;
+    cursor: pointer;
+}
+
+.cf #input-submit:hover {
+    -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+    box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+
+.cf textarea {
+    height: 100px;
+}
+
+.half {
+    float: left;
+    width: 48%;
+    margin-bottom: 1em;
+}
+
+.right {
+    width: 50%;
+}
+
+.left {
+    margin-right: 2%;
+}
+
+.cf .input-img-wrapper {
+    height: 100px;
+}
+
+.cf .input-img {
+    width: 30%;
+    height: 90%;
+    border: 1px solid white;
+    float: left;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cf .input-img i {
+    font-size: 2em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .8
+}
+
+.all-items-list {
+  text-align: left;
+}
+
+.all-items-list .item-wrapper {
+    height: 100px;
+    background: white;
+    margin: 10px 0;
+    padding: 4px;
+}
+
+.item-wrapper .item-row {
+    width: 100%;
+    height: 33%;
+}
+
+.item-row .item-header {
+    float: left;
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+.item-row .item-remove-button {
+    float: right;
+    text-align: right;
+    font-size: 1.6em;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.item-row .item-images {
+    float: left;
+    text-align: left;
+    width: inherit;
+}
+
+.item-row .item-images i {
+    color: rgb(0, 255, 0);
+    padding: 2px;
+}
+
+.item-row .item-price {
+    float: left;
+}
+
+.item-row .item-tags {
+    float: right;
+}
+
+@media (max-width: 480px) {
+    .half {
+        width: 100%;
+        float: none;
+        margin-bottom: 0;
+    }
+}
+
+
+/* Clearfix */
+
+.cf:before, .cf:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
