@@ -77,6 +77,8 @@
 <!--             <button id="close-cart-button">X</button> -->
             <h3>My Items</h3>
             <div class="cart-info-wrapper">
+                
+                <div id="check-out-button" title="check out with paypal"></div>
                 <div class="total-price">0.00</div>
             </div>
         </nav>
@@ -104,22 +106,22 @@
         <script type="text/javascript" src="scripts/theme.js">
         </script>
         <script>
-            var cart = document.getElementById("cart")
+            var cart = document.getElementById("cart");
             cart.onclick = function() {
                 classie.toggle( this, 'active' );
                 classie.toggle( document.getElementById( 'cbp-spmenu-s2' ), 'cbp-spmenu-open' );
                 classie.toggle( cart, 'disabled' );
                 var height = $(window).height();
                 var barHeight = $(".bar").outerHeight();
-                $(".cbp-spmenu").height(height-barHeight)
+                $(".cbp-spmenu").height(height-barHeight);
 
-                console.log(barHeight,height)
+                console.log(barHeight,height);
             }
 
             $(window).on("resize",function(){
                 var height = $(window).height();
                 var barHeight = $(".bar").outerHeight();
-                $(".cbp-spmenu").height(height-barHeight)
+                $(".cbp-spmenu").height(height-barHeight);
             })
 
         </script>
