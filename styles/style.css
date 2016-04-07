@@ -142,6 +142,15 @@
     color: #4CAF50;
 }
 
+#check-out-button{
+    width: 142px;
+    height:27px;
+    background-image: url('https://www.paypalobjects.com/webstatic/en_US/btn/btn_checkout_pp_142x27.png');
+    cursor: pointer;
+    margin-left: 10px;
+    float: left;
+}
+
 
 @media screen and (max-width: 55.1875em){
 
