@@ -89,6 +89,7 @@ h1 {
     margin-top: 2%;
     border-radius: 8px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .cf .input-img i {
@@ -100,7 +101,7 @@ h1 {
 }
 
 .all-items-list {
-  text-align: left;
+    text-align: left;
 }
 
 .all-items-list .item-wrapper {
@@ -146,6 +147,21 @@ h1 {
 
 .item-row .item-tags {
     float: right;
+}
+
+.fileUploadButton {
+    position: fixed;
+    top: -80px;
+    left: -40px;
+    width: 200px !important;
+    height: 200px !important;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.input-image{
+    cursor: pointer;
 }
 
 @media (max-width: 480px) {

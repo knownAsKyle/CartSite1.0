@@ -39,18 +39,11 @@
                 <div class="half right cf">
                     <textarea name="info" type="text" id="input-info" placeholder="Info"></textarea>
                     <div class="input-img-wrapper">
-                        <div class="input-img">
-                            <i class="fa fa-camera">
+                    <form id="sendImageForm" class="input-img"enctype="multipart/form-data">
+                            <i class="fa fa-camera"> 
+                                <input type="file" name="fileToUpload" id="fileToUpload" class="fileUploadButton">
                             </i>
-                        </div>
-                        <div class="input-img">
-                            <i class="fa fa-camera">
-                            </i>
-                        </div>
-                        <div class="input-img">
-                            <i class="fa fa-camera">
-                            </i>
-                        </div>
+                    </form>
                     </div>
                 </div>
                 <input type="submit" value="Submit" id="input-submit"/>

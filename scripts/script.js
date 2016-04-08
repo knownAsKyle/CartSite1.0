@@ -70,19 +70,56 @@ CartSite.payment.checkout = (function checkOut() {
 });
 CartSite.db = {};
 CartSite.db.name = "https://nowaitbreaks.firebaseio.com/";
+CartSite.db.ref = (function() {
+    return new Firebase(CartSite.db.name + "/items");
+})();
 CartSite.elements = {};
 var pay = CartSite.helpers.getEle("check-out-button");
 pay.addEventListener("click", function() {
     CartSite.payment.checkout();
 });
 var loader = CartSite.helpers.getEle("loader");
-for (var t = 0; t < productData.length; t++) {
-    productData[t].id = "crazyId_" + t;
-    makeNewGridItem(productData[t]);
+CartSite.db.ref.once("value", handleDBResponse);
+
+function handleDBResponse(data) {
+    console.log("Response!", data)
+    if (data.val()) {
+        console.log("something?")
+        data.forEach(function(snap) {
+            var tempObj = snap.val();
+            tempObj.id = snap.key();
+            makeNewGridItem(tempObj);
+        });
+        addScripts()
+    } else {
+        for (var t = 0; t < productData.length; t++) {
+            var id = CartSite.db.ref.push(productData[t]);
+            productData[t].id = id;
+            makeNewGridItem(productData[t]);
+        }
+    }
+    loader.parentNode.removeChild(loader);
 }
-loader.parentNode.removeChild(loader);
+
+function addScripts() {
+    var s = CartSite.helpers.makeEle("script");
+    var ss = CartSite.helpers.makeEle("script");
+    var theme = CartSite.helpers.makeEle("script");
+
+    s.type = "text/javascript";
+    ss.type = "text/javascript";
+    theme.type = "text/javascript";
+
+    s.src = "scripts/isotope.pkgd.min.js";
+    ss.src = "scripts/flickity.pkgd.min.js";
+    theme.src ="scripts/theme.js";
+    document.body.appendChild(s);
+    document.body.appendChild(ss);
+    document.body.appendChild(theme);
+}
 
 function makeNewGridItem(data) {
+    console.log(data)
     data = CartSite.helpers.cleanData(data);
     var gridItem = CartSite.helpers.makeEle("div");
     var slider = CartSite.helpers.makeEle("div");
@@ -135,9 +172,13 @@ function makeShoppingCartButton() {
     txt.appendChild(CartSite.helpers.makeText("Add to cart"));
     button.appendChild(icon);
     button.appendChild(txt);
+<<<<<<< HEAD
 
     button.addEventListener("click", function handleAddToCartClick(e) {
         
+=======
+    button.addEventListener("click", function(e) {
+>>>>>>> f82706fadf4f56b5ab257024b70efbdf1e60bfc8
         var me = this.parentElement.children[1];
         var itemObj = {};
         itemObj.id = me.id;
