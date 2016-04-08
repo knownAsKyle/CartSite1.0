@@ -102,25 +102,5 @@
         </script>
         <script type="text/javascript" src="scripts/script.js">
         </script>
-        <script>
-            var cart = document.getElementById("cart");
-            cart.onclick = function() {
-                classie.toggle( this, 'active' );
-                classie.toggle( document.getElementById( 'cbp-spmenu-s2' ), 'cbp-spmenu-open' );
-                classie.toggle( cart, 'disabled' );
-                var height = $(window).height();
-                var barHeight = $(".bar").outerHeight();
-                $(".cbp-spmenu").height(height-barHeight);
-
-                console.log(barHeight,height);
-            }
-
-            $(window).on("resize",function(){
-                var height = $(window).height();
-                var barHeight = $(".bar").outerHeight();
-                $(".cbp-spmenu").height(height-barHeight);
-            })
-
-        </script>
     </body>
 </html>
