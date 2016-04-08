@@ -185,7 +185,6 @@
 
 .action--button {
 	color: #5c5edc;
-	box-shadow: -5px 5px 10px black;
 }
 
 .no-touch .action--button:hover {
