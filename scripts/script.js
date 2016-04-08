@@ -264,21 +264,21 @@ CartSite.builder.makeShoppingCartButton = (function makeShoppingCartButton() {
                 identifier = identifier.substring((identifier.indexOf("_") + 1));
                 var displayItem = CartSite.helpers.getEle("top_" + identifier);
                 classie.remove(mainItemWrapper, 'grid__item_selected');
+                var cart = document.querySelector('.cart'),
+                    cartItems = cart.querySelector('.cart__count');
                 for (var i = 0, len = CartSite.cart.length; i < len; i++) {
                     if (CartSite.cart[i].id === identifier) {
                         CartSite.cart.splice(i, 1);
                         var parent = e.target.parentNode.parentNode;
                         parent.removeChild(e.target.parentNode);
                         CartSite.elements["total-price"].innerText = CartSite.payment.getTotal();
+                        classie.add(cart, 'cart--animate');
                         setTimeout(removeItem, 200);
                         return true;
                     }
                 }
 
                 function removeItem() {
-                    classie.add(cart, 'cart--animate');
-                    var cart = document.querySelector('.cart'),
-                        cartItems = cart.querySelector('.cart__count');
                     cartItems.innerHTML = Number(cartItems.innerHTML) - 1;
                     classie.remove(cart, 'cart--animate');
                 }
