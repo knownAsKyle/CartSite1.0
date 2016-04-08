@@ -59,7 +59,6 @@ CartSite.elements["loader"] = CartSite.helpers.getEle("loader");
 CartSite.elements["grid"] = CartSite.helpers.getEle("grid", true);
 CartSite.elements["cart"] = CartSite.helpers.getEle("cart");
 CartSite.elements["cart-menu"] = CartSite.helpers.getEle('cbp-spmenu-s2');
-
 CartSite.cart = CartSite.cart || [];
 CartSite.payment = {};
 CartSite.payment.getTotal = (function calculateCartTotal() {
@@ -140,10 +139,8 @@ CartSite.payment.checkout = (function checkOut() {
         form.submit();
     }
 });
-
 CartSite.elements["check-out-button"].addEventListener("click", CartSite.payment.checkout);
 CartSite.elements["cart"].addEventListener("click", CartSite.payment.handleShoppingCartMainButtonClick);
-
 CartSite.db = {};
 CartSite.db.name = "https://nowaitbreaks.firebaseio.com/";
 CartSite.db.ref = (function() {
@@ -272,17 +269,18 @@ CartSite.builder.makeShoppingCartButton = (function makeShoppingCartButton() {
                         CartSite.cart.splice(i, 1);
                         var parent = e.target.parentNode.parentNode;
                         parent.removeChild(e.target.parentNode);
-                        console.log("adding to cart animation ")
-                        var cart = document.querySelector('.cart'),
-                            cartItems = cart.querySelector('.cart__count');
-                        classie.add(cart, 'cart--animate');
-                        setTimeout(function() {
-                            cartItems.innerHTML = Number(cartItems.innerHTML) - 1;
-                            classie.remove(cart, 'cart--animate');
-                            CartSite.elements["total-price"].innerText = CartSite.payment.getTotal();
-                        }, 200);
+                        CartSite.elements["total-price"].innerText = CartSite.payment.getTotal();
+                        setTimeout(removeItem, 200);
                         return true;
                     }
+                }
+
+                function removeItem() {
+                    classie.add(cart, 'cart--animate');
+                    var cart = document.querySelector('.cart'),
+                        cartItems = cart.querySelector('.cart__count');
+                    cartItems.innerHTML = Number(cartItems.innerHTML) - 1;
+                    classie.remove(cart, 'cart--animate');
                 }
             }
             return removeButton;
