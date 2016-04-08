@@ -135,7 +135,8 @@ function makeShoppingCartButton() {
     txt.appendChild(CartSite.helpers.makeText("Add to cart"));
     button.appendChild(icon);
     button.appendChild(txt);
-    button.addEventListener("click", function(e) {
+
+    button.addEventListener("click", function handleAddToCartClick(e) {
         
         var me = this.parentElement.children[1];
         var itemObj = {};
@@ -143,14 +144,14 @@ function makeShoppingCartButton() {
         itemObj.name = me.firstChild.innerText;
         itemObj.price = me.lastChild.innerText;
         itemObj.quantity = 1;
-        var item = CartSite.helpers.makeEle("a");
+        var item = CartSite.helpers.makeEle("div");
         var itemName = CartSite.helpers.makeEle("div");
         var itemPrice = CartSite.helpers.makeEle("div");
+        item.className = "cart-item";
         itemName.className = "cart-item-name";
         itemPrice.className = "cart-item-price";
         itemName.appendChild(CartSite.helpers.makeText(itemObj.name));
         itemPrice.appendChild(CartSite.helpers.makeText(itemObj.price));
-        item.href = "#";
         item.id = "cart_" + itemObj.id;
         var cartItem = CartSite.helpers.getEle("cbp-spmenu-s2");
         if (checkIfAlreadyInCart(CartSite.cart, itemObj)) {
@@ -163,7 +164,7 @@ function makeShoppingCartButton() {
             item.appendChild(buildQuantityWidget());
             cartItem.appendChild(item);
         }
-        console.log(CartSite.cart);
+        console.log(this.parentElement);
 
         function checkIfAlreadyInCart(ci, it) {
             for (var i = 0, len = ci.length; i < len; i++) {

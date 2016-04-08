@@ -72,7 +72,7 @@
     background: #2A2B30;*/
 }
 
-.cbp-spmenu a {
+.cbp-spmenu .cart-item {
     display: block;
     color: #fff;
     font-size: 1.1em;
@@ -95,7 +95,7 @@
     z-index: 1000;
 }
 
-.cbp-spmenu-vertical a {
+.cbp-spmenu-vertical .cart-item {
     border-bottom: 1px solid #258ecd;
     padding: 1em;
     padding-right: 30px;
